@@ -44,7 +44,8 @@ class PrototypeCatalog
     {
       id: "mainboard-cpu-generation", component_id: "mainboard", title: "Move to a newer mainboard",
       current: "AMD Ryzen AI 300 Series CPU", proposed: "Newer CPU generation",
-      benefit: "A newer CPU generation can improve general compute performance across the system while the laptop’s modular body remains in use.",
+      benefit: "A newer CPU generation can improve general compute performance across the system " \
+        "while the laptop’s modular body remains in use.",
       changes: [ "The mainboard and CPU change while the surrounding laptop components remain part of the machine." ],
       stays_reusable: [ "Storage", "Display", "Keyboard", "Expansion Cards", "Enclosure" ],
       source_url: "https://frame.work/blog/the-upgradeable-mainboard"
