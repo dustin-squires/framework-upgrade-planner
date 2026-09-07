@@ -109,7 +109,7 @@ body { background: #1c1e1f; }
 .upgrade-visual { position: relative; display: grid; height: 145px; place-items: center; color: #1e2021; background: #a9bba2; }
 .visual-storage { background: #ff7043; }
 .visual-expansion-cards { background: #2d3031; color: #d4d5d1; }
-.visual-keyboard { background: #d4d1c7; }
+.visual-mainboard { background: #252c2e; color: #d4d5d1; }
 .visual-badge { position: absolute; top: 12px; left: 12px; padding: 4px 7px; color: #242627; background: #d9e0d3; border-radius: 2px; font: 10px "DM Mono", monospace; text-transform: uppercase; }
 .visual-storage .visual-badge { background: #242627; color: #f1f1ee; }
 .visual-symbol { font-size: 61px; font-weight: 400; opacity: .7; }

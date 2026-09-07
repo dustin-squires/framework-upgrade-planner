@@ -22,7 +22,7 @@ This prototype assumes configuration detection has already identified one Framew
 1. 16GB → 32GB memory.
 2. 256GB → 1TB storage.
 3. A different Expansion Card port mix.
-4. A different keyboard language or layout.
+4. A newer mainboard with a newer CPU generation and broader performance improvement.
 
 Each opportunity shows its benefit, the characteristic that changes, and a source link. The prototype does not rank the paths.
 
@@ -79,4 +79,4 @@ Test the curated opportunity set, benefit presence, and API response shape. Avoi
 
 ## Demo path
 
-Open the already-identified Framework Laptop 13 view, scan the four upgrade opportunities, and compare the benefit language across memory, storage, Expansion Cards, and keyboard.
+Open the already-identified Framework Laptop 13 view, scan the four upgrade opportunities, and compare the benefit language across memory, storage, Expansion Cards, and mainboard.

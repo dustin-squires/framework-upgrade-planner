@@ -4,7 +4,7 @@ type Component = { id: string; name: string; value: string }
 type UpgradePath = { id: string; component_id: string; title: string; current: string; proposed: string; benefit: string; changes: string[]; stays_reusable: string[]; source_url: string }
 type Prototype = { model: { name: string; subtitle: string; source_url: string }; components: Component[]; identified_configuration: string; upgrade_paths: UpgradePath[] }
 
-const icons: Record<string, string> = { memory: "✦", storage: "▣", "expansion-cards": "◈", keyboard: "⌨" }
+const icons: Record<string, string> = { memory: "✦", storage: "▣", "expansion-cards": "◈", mainboard: "◉" }
 
 export default function App() {
   const [prototype, setPrototype] = useState<Prototype | null>(null)
@@ -34,9 +34,10 @@ export default function App() {
 }
 
 function UpgradeCard({ upgrade }: { upgrade: UpgradePath }) {
+  const componentName = upgrade.component_id.split("-").map((word) => word[0].toUpperCase() + word.slice(1)).join(" ")
   return <article className="upgrade-card">
     <div className={`upgrade-visual visual-${upgrade.component_id}`}><span className="visual-badge">Upgrade</span><span className="visual-symbol">{icons[upgrade.component_id]}</span></div>
-    <div className="upgrade-card-top"><span className="component-icon">{icons[upgrade.component_id]}</span><span className="component-name">{upgrade.component_id.replace("-", " ")}</span></div>
+    <div className="upgrade-card-top"><span className="component-icon">{icons[upgrade.component_id]}</span><span className="component-name">{componentName}</span></div>
     <h3>{upgrade.title}</h3>
     <div className="upgrade-values"><span>{upgrade.current}</span><b>→</b><strong>{upgrade.proposed}</strong></div>
     <div className="benefit"><span>BENEFIT</span><p>{upgrade.benefit}</p></div>

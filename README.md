@@ -6,7 +6,7 @@ The demo assumes the laptop has already been identified and follows one focused 
 
 `Identified Framework Laptop 13 → current configuration → four upgrade opportunities`
 
-The main screen shows Memory, Storage, Expansion Cards, and Keyboard opportunities together. Each card includes the current state, proposed change, practical benefit, and a source link. The paths are presented for exploration and are not ranked recommendations.
+The main screen shows Memory, Storage, Expansion Cards, and Mainboard opportunities together. Each card includes the current state, proposed change, practical benefit, and a source link. The paths are presented for exploration and are not ranked recommendations.
 
 ## Run it locally
 
