@@ -1,0 +1,25 @@
+# Local environment and secrets
+/.env*
+!/\.env.example
+/config/master.key
+
+# Ruby and Rails runtime files
+/.bundle
+/log/*
+!/log/.keep
+/storage/*
+!/storage/.keep
+/tmp/*
+!/tmp/.keep
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Frontend dependencies and builds
+/node_modules
+/frontend/dist
+
+# Editor and operating system files
+/.idea
+/.vscode
+*.swp
+.DS_Store
