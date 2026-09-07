@@ -17,11 +17,13 @@ An intentionally short identification flow followed by a persistent “Your Fram
 
 ## First vertical slice
 
-1. Choose Framework Laptop 13 as the model.
-2. Identify memory and storage with an explicit “I’m not sure” option.
+This prototype intentionally follows one branch:
+
+1. Choose Framework Laptop 13.
+2. Identify a 16GB memory configuration.
 3. Show a persistent machine view made of modular component cards.
-4. Select Memory or Storage.
-5. Show compatible upgrade opportunities from structured data and rules.
+4. Open the Memory component.
+5. Show one deterministic 16GB → 32GB upgrade path.
 6. Show the characteristic that changes and the parts that remain reusable.
 
 ## Explicitly out of scope
@@ -30,15 +32,14 @@ An intentionally short identification flow followed by a persistent “Your Fram
 - Automatic hardware detection.
 - Workload diagnosis, bottleneck inference, ranking, confidence scoring, or AI recommendations.
 - A complete Framework catalog or exhaustive cross-generation compatibility engine.
+- Additional interactive upgrade branches beyond the curated memory path.
 - Prices, benchmarks, performance predictions, or unsupported experiential claims.
 - Expansion Card configuration in the first slice.
 - Bespoke 3D or exploded-laptop visualization.
 
 ## Data / state model
 
-The client owns a small `MachineConfiguration` state: model, memory capacity, storage capacity, and whether each value is known. The API exposes curated `Component` and `UpgradeOpportunity` records. An opportunity declares its component category, required model family, minimum current capacity, resulting capacity, a concise supported impact statement, and reusable components.
-
-Unknown values are first class. They prevent rules that require a known current value from claiming a precise path, while still allowing the machine view to be useful.
+The client owns a small `MachineConfiguration` state containing the selected model and 16GB memory configuration. The API exposes one curated machine and one `UpgradeOpportunity` record. The opportunity declares its component category, required model family, current capacity, resulting capacity, supported impact statement, and reusable components.
 
 ## Frontend architecture
 
@@ -51,10 +52,9 @@ Rails runs as a small JSON API backed by SQLite. The first endpoints expose the 
 ## Important UX states
 
 - Initial setup with one meaningful choice at a time.
-- “I’m not sure” for unknown memory or storage.
-- A partially identified machine that remains explorable.
-- No compatible upgrade opportunities for a known state.
-- Loading and API error states.
+- A loading and API error state.
+- A machine view that makes the selected component feel explorable.
+- A detail state that separates what changes from what stays reusable.
 
 ## Key technical decisions
 
@@ -69,9 +69,9 @@ This slice favors traceability over catalog breadth. The data is intentionally s
 
 ## Unknowns / questions
 
-- Exact upgrade compatibility across every Laptop 13 generation.
-- Whether users can reliably identify memory and storage without a system scan or purchase history.
-- Whether mainboard upgrades should be introduced alongside memory and storage or in a later step.
+- How this memory path should be represented across every Laptop 13 generation.
+- Whether owners understand this guided branch without needing a system scan or purchase history.
+- Whether the next useful branch is storage or mainboard upgrades.
 
 ## Testing strategy
 
@@ -79,4 +79,4 @@ Test the compatibility rules and API response shape, plus the main setup transit
 
 ## Demo path
 
-Choose Framework Laptop 13, select 16GB memory, leave storage unknown, enter “Your Framework,” open Memory, select the available capacity increase, and point out the explicit “what changes” and “what stays reusable” sections.
+Choose Framework Laptop 13, select 16GB memory, enter “Your Framework,” open Memory, select the 32GB capacity increase, and point out the explicit “what changes” and “what stays reusable” sections.

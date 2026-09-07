@@ -1,0 +1,20 @@
+{
+  "name": "framework-upgrade-planner",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"bin/rails server\" \"vite --config frontend/vite.config.ts\"",
+    "build": "vite build --config frontend/vite.config.ts",
+    "test": "vitest run --passWithNoTests --config frontend/vite.config.ts"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "concurrently": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  },
+  "devDependencies": {}
+}
