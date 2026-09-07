@@ -76,3 +76,55 @@ button.component-card { cursor: pointer; }
 .card-footer { display: flex; gap: 14px; justify-content: space-between; align-items: end; margin-top: auto; padding-top: 18px; color: #91a097; font-size: 11px; line-height: 1.4; }
 .card-footer a { flex-shrink: 0; color: #91d9b7; text-decoration: none; }
 @media (max-width: 640px) { .upgrade-grid { grid-template-columns: 1fr; } }
+
+/* Framework-inspired product surface */
+:root { color: #e9e9e6; background: #1c1e1f; }
+body { background: #1c1e1f; }
+.shell { max-width: 1240px; padding: 0 32px 80px; }
+.topbar { min-height: 58px; margin: 0 -32px; padding: 0 32px; color: #aeb0ad; background: #17191a; border-bottom: 1px solid #2d2f30; font-size: 12px; }
+.brand { display: flex; align-items: center; gap: 7px; color: #f2f2ef; font-weight: 600; letter-spacing: -.02em; }
+.brand-mark { width: 21px; height: 21px; color: #17191a; background: #f1f1ee; font-size: 13px; }
+.site-nav, .utility-nav { display: flex; align-items: center; gap: 22px; }
+.site-nav { margin-left: 44px; }
+.nav-active { color: #f1f1ee; }
+.utility-nav { margin-left: auto; gap: 18px; }
+.prototype-label { padding: 4px 7px; color: #c4c5c1; border-color: #464849; font-size: 9px; }
+.machine-view { max-width: 1160px; margin: 0 auto; padding-top: 72px; }
+.section-intro h1 { max-width: none; margin: 10px 0 9px; font-size: clamp(40px, 6vw, 64px); letter-spacing: -.055em; }
+.eyebrow { color: #ff7043; }
+.lede { max-width: 650px; color: #a7aaa6; font-size: 16px; }
+.machine-meta { margin-top: 30px; color: #a7aaa6; background: #252728; border: 1px solid #343738; border-radius: 3px; }
+.machine-meta strong { color: #f1f1ee; }
+.status-dot { background: #ff7043; }
+.current-config { margin: 28px 0 64px; }
+.section-label { color: #858987; }
+.config-chip { color: #aaaead; background: #242627; border-color: #393b3c; border-radius: 3px; }
+.config-chip b { color: #e8e8e5; }
+.opportunity-heading { border-bottom: 1px solid #383a3b; padding-bottom: 16px; }
+.opportunity-heading h2 { color: #ededeb; font-size: 27px; }
+.opportunity-count { color: #999c99; }
+.upgrade-grid { gap: 15px; }
+.upgrade-card { min-height: 390px; padding: 0 0 20px; overflow: hidden; background: #242627; border: 1px solid #363839; border-radius: 3px; }
+.upgrade-card:hover { border-color: #ff7043; }
+.upgrade-visual { position: relative; display: grid; height: 145px; place-items: center; color: #1e2021; background: #a9bba2; }
+.visual-storage { background: #ff7043; }
+.visual-expansion-cards { background: #2d3031; color: #d4d5d1; }
+.visual-keyboard { background: #d4d1c7; }
+.visual-badge { position: absolute; top: 12px; left: 12px; padding: 4px 7px; color: #242627; background: #d9e0d3; border-radius: 2px; font: 10px "DM Mono", monospace; text-transform: uppercase; }
+.visual-storage .visual-badge { background: #242627; color: #f1f1ee; }
+.visual-symbol { font-size: 61px; font-weight: 400; opacity: .7; }
+.upgrade-card-top, .upgrade-card h3, .upgrade-values, .benefit, .card-footer { margin-left: 20px; margin-right: 20px; }
+.upgrade-card-top { margin-top: 18px; }
+.component-icon { color: #ff7043; }
+.component-name { color: #888c89; }
+.upgrade-card h3 { margin-top: 12px; margin-bottom: 13px; font-size: 20px; }
+.upgrade-values { color: #8f9390; }
+.upgrade-values strong { color: #f0f0ed; }
+.upgrade-values b { color: #ff7043; }
+.benefit { margin-top: 21px; background: #2c2f30; border-radius: 2px; }
+.benefit span { color: #ff7043; }
+.benefit p { color: #d2d3cf; }
+.card-footer { color: #8f9390; }
+.card-footer a { color: #ff7043; }
+.footnote { color: #858987; }
+@media (max-width: 760px) { .site-nav { display: none; } .utility-nav span:not(.prototype-label) { display: none; } .shell { padding-left: 20px; padding-right: 20px; } .topbar { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; } }

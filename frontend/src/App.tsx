@@ -21,7 +21,7 @@ export default function App() {
   if (!prototype) return <main className="shell loading"><span className="pulse" /> Reading your Framework configuration…</main>
 
   return <main className="shell">
-    <header className="topbar"><span className="brand-mark">F</span><span>Framework Upgrade Planner</span><span className="prototype-label">Prototype</span></header>
+    <header className="topbar"><div className="brand"><span className="brand-mark">✣</span><span>framework</span></div><nav className="site-nav"><span>Desktop</span><span>Laptop 12</span><span className="nav-active">Laptop 13</span><span>Shop all</span></nav><div className="utility-nav"><span>Support</span><span>About</span><span className="prototype-label">Prototype</span></div></header>
     <section className="machine-view">
       <div className="section-intro"><p className="eyebrow">Your Framework</p><h1>{prototype.model.name}</h1><p className="lede">Your machine is identified. Here are the upgrades available from this configuration, with the benefit of each change in plain language.</p></div>
       <div className="machine-meta"><span className="status-dot" /> Configuration identified <strong>{prototype.identified_configuration}</strong></div>
@@ -35,6 +35,7 @@ export default function App() {
 
 function UpgradeCard({ upgrade }: { upgrade: UpgradePath }) {
   return <article className="upgrade-card">
+    <div className={`upgrade-visual visual-${upgrade.component_id}`}><span className="visual-badge">Upgrade</span><span className="visual-symbol">{icons[upgrade.component_id]}</span></div>
     <div className="upgrade-card-top"><span className="component-icon">{icons[upgrade.component_id]}</span><span className="component-name">{upgrade.component_id.replace("-", " ")}</span></div>
     <h3>{upgrade.title}</h3>
     <div className="upgrade-values"><span>{upgrade.current}</span><b>→</b><strong>{upgrade.proposed}</strong></div>
