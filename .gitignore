@@ -18,6 +18,8 @@
 # Frontend dependencies and builds
 /node_modules
 /frontend/dist
+/public/assets/
+/public/index.html
 
 # Editor and operating system files
 /.idea
