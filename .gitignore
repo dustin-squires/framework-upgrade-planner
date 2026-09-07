@@ -12,6 +12,7 @@
 /tmp/*
 !/tmp/.keep
 !/tmp/pids/
+/tmp/pids/*
 !/tmp/pids/.keep
 
 # Frontend dependencies and builds

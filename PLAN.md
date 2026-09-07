@@ -6,7 +6,7 @@ An owner of a Framework Laptop 13 may not know which parts of their current mach
 
 ## Product hypothesis
 
-An intentionally short identification flow followed by a persistent “Your Framework” component view will help owners explore deterministic upgrade paths with more confidence and less catalog knowledge.
+Once the owner’s machine is identified, showing several configuration-aware upgrade opportunities together will help them compare what can change and why without clicking through a catalog or being handed an opaque ranking.
 
 ## Success / validation signals
 
@@ -17,14 +17,14 @@ An intentionally short identification flow followed by a persistent “Your Fram
 
 ## First vertical slice
 
-This prototype intentionally follows one branch:
+This prototype assumes configuration detection has already identified one Framework Laptop 13 with a curated current configuration. It shows four upgrade opportunities on the same screen:
 
-1. Choose Framework Laptop 13.
-2. Identify a 16GB memory configuration.
-3. Show a persistent machine view made of modular component cards.
-4. Open the Memory component.
-5. Show one deterministic 16GB → 32GB upgrade path.
-6. Show the characteristic that changes and the parts that remain reusable.
+1. 16GB → 32GB memory.
+2. 256GB → 1TB storage.
+3. A different Expansion Card port mix.
+4. A different keyboard language or layout.
+
+Each opportunity shows its benefit, the characteristic that changes, and a source link. The prototype does not rank the paths.
 
 ## Explicitly out of scope
 
@@ -32,18 +32,18 @@ This prototype intentionally follows one branch:
 - Automatic hardware detection.
 - Workload diagnosis, bottleneck inference, ranking, confidence scoring, or AI recommendations.
 - A complete Framework catalog or exhaustive cross-generation compatibility engine.
-- Additional interactive upgrade branches beyond the curated memory path.
+- Automatic hardware detection; the prototype starts after identification.
+- Detail pages or click-through flows for individual upgrade opportunities.
 - Prices, benchmarks, performance predictions, or unsupported experiential claims.
-- Expansion Card configuration in the first slice.
 - Bespoke 3D or exploded-laptop visualization.
 
 ## Data / state model
 
-The client owns a small `MachineConfiguration` state containing the selected model and 16GB memory configuration. The API exposes one curated machine and one `UpgradeOpportunity` record. The opportunity declares its component category, required model family, current capacity, resulting capacity, supported impact statement, and reusable components.
+The API exposes one curated machine configuration and four `UpgradeOpportunity` records. Each opportunity declares its component category, current state, proposed state, benefit, change description, reusable components, and source. The client renders all four opportunities together.
 
 ## Frontend architecture
 
-React and TypeScript are built with Vite in `frontend/`. The app uses local component state and fetches the curated API data from Rails. It has three meaningful UI states: setup, machine view, and component exploration. No state library is needed for this slice.
+React and TypeScript are built with Vite in `frontend/`. The app fetches the identified configuration and curated opportunities from Rails. It has one meaningful UI state after loading: the machine and its upgrade overview. No state library is needed for this slice.
 
 ## Backend / API architecture
 
@@ -53,8 +53,8 @@ Rails runs as a small JSON API backed by SQLite. The first endpoints expose the 
 
 - Initial setup with one meaningful choice at a time.
 - A loading and API error state.
-- A machine view that makes the selected component feel explorable.
-- A detail state that separates what changes from what stays reusable.
+- A machine view that shows the identified configuration.
+- Four upgrade cards with benefits and explicit change descriptions.
 
 ## Key technical decisions
 
@@ -69,14 +69,14 @@ This slice favors traceability over catalog breadth. The data is intentionally s
 
 ## Unknowns / questions
 
-- How this memory path should be represented across every Laptop 13 generation.
-- Whether owners understand this guided branch without needing a system scan or purchase history.
-- Whether the next useful branch is storage or mainboard upgrades.
+- How these opportunities should be represented across every Laptop 13 generation.
+- Whether owners understand the benefit language without benchmark claims.
+- Which additional component states would be necessary before this could represent a real identified machine.
 
 ## Testing strategy
 
-Test the compatibility rules and API response shape, plus the main setup transition and unknown-state behavior in the React client. Avoid tests that only mirror component markup.
+Test the curated opportunity set, benefit presence, and API response shape. Avoid tests that only mirror component markup.
 
 ## Demo path
 
-Choose Framework Laptop 13, select 16GB memory, enter “Your Framework,” open Memory, select the 32GB capacity increase, and point out the explicit “what changes” and “what stays reusable” sections.
+Open the already-identified Framework Laptop 13 view, scan the four upgrade opportunities, and compare the benefit language across memory, storage, Expansion Cards, and keyboard.

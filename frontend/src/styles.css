@@ -54,3 +54,25 @@ button.component-card { cursor: pointer; }
 .loading { display: grid; place-items: center; color: #aab5ad; }
 .pulse { width: 8px; height: 8px; margin-right: 10px; background: #91d9b7; border-radius: 50%; box-shadow: 0 0 0 8px #91d9b722; }
 @media (max-width: 640px) { .shell { padding: 22px 20px 60px; } .welcome { padding-top: 12vh; } h1 { font-size: 47px; } .component-grid, .detail-columns { grid-template-columns: 1fr; } .machine-meta { align-items: flex-start; flex-direction: column; } .machine-meta strong { margin-left: 0; } .upgrade-hero { gap: 15px; padding: 18px; } .upgrade-hero strong { font-size: 19px; } }
+
+.current-config { margin: 30px 0 58px; }
+.section-label { color: #91a097; font: 11px "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.config-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
+.config-chip { padding: 10px 12px; color: #aeb9b2; background: #18211e; border: 1px solid #2c3933; border-radius: 6px; font-size: 12px; }
+.config-chip b { margin-right: 8px; color: #e5e7e1; font-weight: 500; }
+.opportunity-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 17px; }
+.opportunity-heading h2 { margin: 8px 0 0; font-size: 28px; letter-spacing: -.04em; }
+.opportunity-count { color: #91d9b7; font: 12px "DM Mono", monospace; }
+.upgrade-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.upgrade-card { display: flex; min-height: 300px; flex-direction: column; padding: 22px; background: linear-gradient(145deg, #203b32, #18221f); border: 1px solid #3c6b58; border-radius: 11px; }
+.upgrade-card-top { display: flex; align-items: center; gap: 9px; }
+.upgrade-card h3 { margin: 25px 0 16px; font-size: 22px; letter-spacing: -.04em; }
+.upgrade-values { display: flex; align-items: center; gap: 8px; color: #82958b; font-size: 12px; }
+.upgrade-values b { color: #91d9b7; font-size: 18px; font-weight: 400; }
+.upgrade-values strong { color: #f5f2eb; font-size: 13px; font-weight: 600; }
+.benefit { margin-top: 24px; padding: 13px; background: #13251f80; border-radius: 7px; }
+.benefit span { color: #91d9b7; font: 10px "DM Mono", monospace; letter-spacing: .12em; }
+.benefit p { margin: 7px 0 0; color: #d3e2d8; font-size: 14px; line-height: 1.45; }
+.card-footer { display: flex; gap: 14px; justify-content: space-between; align-items: end; margin-top: auto; padding-top: 18px; color: #91a097; font-size: 11px; line-height: 1.4; }
+.card-footer a { flex-shrink: 0; color: #91d9b7; text-decoration: none; }
+@media (max-width: 640px) { .upgrade-grid { grid-template-columns: 1fr; } }
