@@ -1,54 +1,59 @@
 # Framework Upgrade Planner
 
-This is a small product-engineering prototype for Framework. It explores one question: can an owner understand a useful upgrade path for the Framework Laptop 13 they already have without learning the whole product catalog first?
+Hi, I’m Dustin Squires, a Senior Full-stack Product Engineer who enjoys taking an ambiguous customer problem from discovery through a focused, working release. I built this small prototype because Framework’s upgradeable ownership model invites a different question from a typical laptop store: **how can an owner understand what their existing machine can become?**
 
-The demo assumes the laptop has already been identified and follows one focused overview:
+**[Open the live prototype →](https://framework-upgrade-planner.onrender.com/)**
 
-`Identified Framework Laptop 13 → current configuration → four upgrade opportunities`
+## The idea
 
-The main screen shows Memory, Storage, Expansion Cards, and Mainboard opportunities together. Each card includes the current state, proposed change, practical benefit, and a source link. The paths are presented for exploration and are not ranked recommendations.
+Framework owners can replace individual components instead of replacing an entire laptop. In practice, someone who knows they need more storage or performance may still need to work out which component changes, what it does for them, and what they get to keep.
 
-## Run it locally
+This prototype starts after a Framework Laptop 13 has been identified, which is an automatic process when you'd open this site from a Framework laptop. It gives the owner a persistent view of their machine and lets them explore four focused upgrade paths: Memory, Storage, Expansion Cards, and Mainboard.
 
-Requirements:
+The intent is not to choose for the owner with an opaque recommendation score. It is to make the available choices understandable and preserve their control over the decision.
 
-- Ruby 3.3.12
-- Rails 8.1.3.1
-- Node.js and npm
+## Try the flow
 
-Install dependencies and start both servers:
+1. Open the identified Framework Laptop 13.
+2. Click an upgrade card to explore that component in its own drawer.
+3. Compare the current configuration with a proposed option before applying it.
+4. See the benefit, illustrative price, and reusable components.
+5. Add upgrades to a plan and review the changed configuration and total.
 
-```sh
-bundle install
-npm install
-npm run dev
-```
+## What I was trying to solve
 
-Open [http://localhost:5173](http://localhost:5173). The Vite client proxies `/api` requests to Rails on port 3000.
+The public product experience communicates that Framework laptops can be repaired, customized, and upgraded. The product challenge I wanted to explore was the gap between that promise and an owner’s specific question: “Given the laptop I already have, what can I change and why would I choose it?”
 
-## Technical approach
+The product hypothesis behind this work is that showing configuration-aware opportunities together, with plain-language benefits and visible reuse, makes the machine’s modularity easier to act on than sending someone through a broad catalog or a traditional checkout configurator.
 
-Rails runs as a small JSON API backed by SQLite. The curated data and compatibility rule live in [`app/services/prototype_catalog.rb`](app/services/prototype_catalog.rb), where the rule is directly inspectable:
+The prototype deliberately keeps the scope narrow. It models one identified Laptop 13 configuration and a small, inspectable set of upgrade paths. It does not claim to represent Framework’s internal systems, roadmap, inventory, or complete cross-generation compatibility rules.
 
-- the demo model is Framework Laptop 13 with AMD Ryzen AI 300 Series;
-- the identified configuration returns four curated paths;
-- each path includes a benefit grounded in the characteristic being changed;
-- the prototype does not estimate performance, price, or availability.
+## How it is built
 
-React and TypeScript provide the identified machine view and upgrade overview. There is no account, persistence, hardware detection, recommendation score, or generic rules engine.
+- **Rails 8** serves a small JSON API with direct, deterministic upgrade data.
+- **React and TypeScript** provide the machine view, component drawers, local plan state, and comparison UI.
+- The curated Ruby catalog makes each displayed path and reuse claim easy to inspect and test.
+- The React build is served by Rails in production, keeping deployment to one Render service.
 
-The product facts shown here are limited to the current Framework Laptop 13 specifications and are linked to the source in the interface. The prototype does not claim prices, availability, benchmarks, or performance predictions.
+For a first slice, the data is intentionally curated rather than placed behind a broad catalog schema or recommendation engine. It made the product behavior reviewable while keeping the work focused on the user journey.
 
-## Verification
+## Boundaries and questions I would validate
 
-```sh
-bin/rails test
-npm run build
-npm run test
-```
+I would want to learn from the Framework team:
 
-Rails tests cover the deterministic rule and API response. The frontend build verifies the TypeScript/React bundle; the frontend test command is present for the next interaction test and currently permits an empty test set because this prototype does not add a browser-test dependency.
+- Which questions most often precede memory, storage, or mainboard upgrades?
+- How is compatibility represented across Laptop 13 generations and inventory regions?
+- Where do owners get stuck when identifying their current configuration?
 
-## Product context
+## About me
 
-The reasoning behind the scope, observations, assumptions, and next questions is in [`PRODUCT_NOTES.md`](PRODUCT_NOTES.md) and [`PLAN.md`](PLAN.md).
+I have 6+ years of full-stack engineering experience and currently work as a Senior Software Engineer at Parachute Health. My strongest tools are Ruby on Rails, React/TypeScript, SQL, and systems design. I work closely with Product and Design to turn customer friction into practical, reliable software, and I take production ownership seriously through performance work, incident response, and operational debugging.
+
+**[Read my résumé →](https://dustin-squires.github.io/resume/)**
+
+## Contact
+
+- Dustin Squires
+- Blythewood, South Carolina
+- [dustinsquires512@gmail.com](mailto:dustinsquires512@gmail.com)
+- [(843) 446-3780](tel:+18434463780)
