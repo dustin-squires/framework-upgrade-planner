@@ -1,5 +1,7 @@
 # Framework Upgrade Planner
 
+![Framework Upgrade Planner prototype walkthrough](public/media/framework-upgrade-planner.gif)
+
 Hi, I’m Dustin Squires, a Senior Full-stack Product Engineer who enjoys taking an ambiguous customer problem from discovery through a focused, working release. I built this small prototype because Framework’s upgradeable ownership model invites a different question from a typical laptop store: **how can an owner understand what their existing machine can become?**
 
 **[Open the live prototype →](https://framework-upgrade-planner.onrender.com/)**
